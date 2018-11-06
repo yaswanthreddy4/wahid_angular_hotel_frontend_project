@@ -1,0 +1,25 @@
+<div class="container" style="margin-top:100px">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link" (click)="getHotelsWithFilter(0,count)">1</a></li>
+      <li class="page-item"><a class="page-link"(click)="getHotelsWithFilter(5,count)" >2</a></li>
+      <li class="page-item"><a class="page-link" (click)="getHotelsWithFilter(10,count)">3</a></li>
+      <li class="page-item"><a class="page-link" (click)="getHotelsWithFilter(offset+count,count)">Next</a></li>
+    </ul>
+  </nav>
+  <div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let hotel of hotels">
+    <div class="card" >
+      <img class="card-img-top" src="http://ihg.scene7.com/is/image/ihg/holiday-inn-hotel-and-suites-oakland-2533422671-4x3" alt="Card image cap">
+      <div class="card-body">
+        <a routerLink="{{hotel._id}}">
+          <h5 class="card-title">{{hotel.name}}</h5>
+        </a>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
